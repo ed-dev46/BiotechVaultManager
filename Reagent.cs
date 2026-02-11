@@ -1,12 +1,12 @@
 ﻿namespace BioTechVaultManager;
 
-public class Virus : Specimen, IRisk
+public class Reagent : Specimen, IRisk
 {
-    public Virus(string id, string name, double temperatureC) : base(id, name, temperatureC)
+    public Reagent(string id, string name, double temperatureC) : base(id, name, temperatureC)
     {
     }
 
-    public RiskLevelEnum RiskLevel => RiskLevelEnum.DANGEROUS;
+    public RiskLevelEnum RiskLevel => RiskLevelEnum.CAUTION;
 
     public void AlertProtocol()
     {
@@ -14,16 +14,16 @@ public class Virus : Specimen, IRisk
         var consoleTxtColor = Console.ForegroundColor;
 
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"ALERT! VIRUS {Name} DETECTED");
+        Console.WriteLine($"ALERT! REAGENT {Name} DETECTED");
         Thread.Sleep(2000);
         Console.BackgroundColor = ConsoleColor.Yellow;
         Console.WriteLine("CONTAINMENT PROTOCOLS ACTIVATED");
         Thread.Sleep(2000);
         Console.WriteLine("ISOLATING THE AFFECTED AREA...");
         Thread.Sleep(2000);
-        Console.WriteLine("DECONTAMINATION IN PROGRESS...");
+        Console.WriteLine("ALERTING DAMAGE CONTROL AND REGISTERING THE INCIDENT...");
         Thread.Sleep(2000);
-        Console.WriteLine("ASSISTED IMMUNE RESPONSE ACTIVATION...");
+        Console.WriteLine("ACTIVATION OF CONTROLLED INCINERATION SYSTEM...");
         Thread.Sleep(2000);
         Console.BackgroundColor = ConsoleColor.White;
         Console.ForegroundColor = ConsoleColor.Green;
